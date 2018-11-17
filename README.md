@@ -135,7 +135,7 @@ into BabySploit. Ex: `ftpbruteforce` - runs the ftpbruteforce tool.
   - Post Exploitation
   - Bruteforcing
   - Phishing
-  - Cryptography/Stenography
+  - Cryptography/Steganography
  
 ### Information Gathering:
 
