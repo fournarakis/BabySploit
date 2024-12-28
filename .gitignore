@@ -1,2 +1,8 @@
-config.cfg
-__pycache__/
+babysploit/config/config.cfg
+babysploit/__pycache__/
+babysploit/modules/__pycache__/
+babysploit/wpseku/modules/__pycache__/
+babysploit/wpseku/lib/__pycache__/
+build/
+dist/
+babysploit.egg-info/

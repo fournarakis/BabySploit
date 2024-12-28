@@ -1,8 +1,13 @@
+import os
+
+from configparser import ConfigParser
+
+
 def run():
-    global rhost 
-    from configparser import ConfigParser
+    global rhost
     config = ConfigParser()
-    config.read("babysploit/config/config.cfg")
+    path = str(os.path.expanduser('~')) + "/config.cfg"
+    config.read(path)
     print("== Current Configuration: ==")
     print("Target: %s" % config['DEFAULT']['rhost'])
     print("[?] Is this configuration correct? [?]")
@@ -13,6 +18,7 @@ def run():
         print("[?] Enter Target: [?]")
         rhost = str(input("> "))
     choose()
+
 
 def choose():
     print("[?] What type of scan would you like to perform: [?]")
@@ -27,21 +33,22 @@ def choose():
         print("\n[!] Error: Unknown Scan Type! [!]")
         choose()
 
+
 def pluginscan():
-    import os
     print("[!] Confirm Settings [!]")
     print("[i] Target: %s [i]" % rhost)
     input("Press ENTER To Start Scan")
-    os.system("wget %s -O babysploit/tmp/temp.php" % rhost)
-    os.system("python3 babysploit/wpseku/wpseku.py --scan babysploit/tmp/temp.php --verbose")
-    os.system("rm babysploit/tmp/temp.php")
+    os.system("wget %s -O tmp/temp.php" % rhost)
+    os.system("python3 wpseku/wpseku.py --scan tmp/temp.php --verbose")
+    os.system("rm tmp/temp.php")
+
 
 def bruteforce():
-    import os
-    from configparser import ConfigParser
     config = ConfigParser()
-    config.read("babysploit/config/config.cfg")
-    print("[?] Would you like to use the directory in your config for the wordlist or a custom filepath? [?]")
+    path = str(os.path.expanduser('~')) + "/config.cfg"
+    config.read(path)
+    print("[?] Would you like to use the directory in your config for the "
+          "wordlist or a custom filepath? [?]")
     print("[i] Current Config: %s [i]" % config['DEFAULT']['passwordlist'])
     ask = str(input("[config | custom] ").lower())
     if ask == "config":
@@ -63,12 +70,13 @@ def bruteforce():
     print("Username: %s" % username)
     print("Scan Type: Brute Force")
     input("Press ENTER To Confirm")
-    os.system("python3 babysploit/wpseku/wpseku.py --url %s --brute --user %s --wordlist %s --verbose" % (rhost, username, wordlist))
+    os.system("python3 wpseku/wpseku.py --url %s --brute --user %s --wordlist %s --verbose" %
+              (rhost, username, wordlist))
+
 
 def generic():
-    import os
     print("[!] Confirm Settings [!]")
     print("Target: %s" % rhost)
     print("Scan Type: Generic")
     input("Press ENTER To Confirm")
-    os.system("python3 babysploit/wpseku/wpseku.py --url %s --verbose" % rhost)
+    os.system("python3 wpseku/wpseku.py --url %s --verbose" % rhost)

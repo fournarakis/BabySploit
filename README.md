@@ -1,91 +1,71 @@
-<p align="center">
-  <img src="https://i.imgur.com/cf2h0Vn.png" alt="BabySploit"/></br>
-</p>
+
 
 <p align="center">
+  <a href="https://pepy.tech/project/babysploit"><img src="https://pepy.tech/badge/babysploit/week"></a>
+  <a href="https://pepy.tech/project/babysploit"><img src="https://pepy.tech/badge/babysploit/month"></a>
+  <a href="https://pepy.tech/project/babysploit"><img src="https://pepy.tech/badge/babysploit"></a></br>
   <a href="https://github.com/M4cs/BabySploit/network"><img src="https://img.shields.io/github/forks/M4cs/BabySploit.svg" alt="Forks"></a>
   <a href="https://github.com/M4cs/BabySploit/stargazers"><img src="https://img.shields.io/github/stars/M4cs/BabySploit.svg" atl="Stars"></a>
   <a href="https://github.com/M4cs/BabySploit/issues"><img src="https://img.shields.io/github/issues/M4cs/BabySploit.svg" alt="Issues"></a>
-  <a href=""><img src="https://img.shields.io/badge/version-0.1.7-green.svg?syle=popout"></a>
+  <a href=""><img src="https://img.shields.io/badge/version-1.5-green.svg?syle=popout"></a>
   <a href="https://github.com/M4cs/BabySploit/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/M4cs/BabySploit.svg" alt="License"></a>
   <a href="http://www.python.org/download/"><img alt="Python 3.6+" src="https://img.shields.io/badge/Python-3.6+-yellow.svg"></a>
   <a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FM4cs%2FBabySploit"><img src="https://img.shields.io/twitter/url/https/github.com/M4cs/BabySploit.svg?style=popout" alt="Twitter"></a>
-  <a href="https://discord.gg/7VN9VZe"><img src="https://img.shields.io/badge/discord-join-blue.svg?syle=popout"></a>
+  <a href="https://discord.gg/C7jgQeN"><img src="https://img.shields.io/badge/discord-join-blue.svg?syle=popout"></a>
 
 <p align="center">
-  <b>Tested on Kali Linux. Should work with all Debian based distros (and other ones if you have the right packages installed)</b>
-</p>
-
-<p align="center">
-  <a href="https://bit.ly/2Ke9uVi">Donate To The Developer</a>
+  <b>Made For Kali Linux. No Support For Other Distros If There Are Problems. Tested and Working on MacOS for most Tools.</b>
+  </br><a href="https://twitter.com/maxbridgland" alt="Twitter Link"><b>Developed by @maxbridgland</b></a></br>
+  <a href="https://bit.ly/2Ke9uVi">Donate</a>
 </p>
 <p align="center">
   <a href="https://discord.gg/7VN9VZe"><img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/27090541/8dd5c907f2a0eecb73dc6a4776fc9a25878ebcdd.png" alt="Forks"></a>
 
 <p align="center">
-  <b>BabySploit is a penetration testing framework aimed at making it easy to learn how to use bigger,</br> 
+  <b>BabySploit is a penetration testing toolkit aimed at making it easy to learn how to use bigger,</br> 
 more complicated frameworks like Metasploit. With a very easy to use UI and toolkit, anybody</br>
 from any experience level will find use out of BabySploit. Below are some screenshots of the framework.</b>
 </p>
-<p align="center">
-  <img src="https://image.prntscr.com/image/6QxQQfNmS72LetrSBtVeHg.png" alt="Welcome"/></br>
-</p>
 
-# Changelog:
-
-## Types of Updates:
-  - Updates: Framework has been updated with new features or major fixes.
-  - Releases: Stable release milestone.
-  - Hotfix: Quick hotfix. Minor bug fix or minor change.
-#### 0.1.7 Update:
-  - Added Installer Script
-  - Fixed Updater
-#### 0.1.6 Update:
-  - Added Cloudflare Bypasser
-  - Added WPSeku WP Vuln Scan
-#### 0.1.4 & 0.1.5 Hotfixes:
-  - Fix updater
-#### 0.1.3 Hotfix:
-  - Fix Method of grabbing default gateway
-#### 0.1.2 Hotfix:
-  - Bug fixes
-#### 0.1.1 Hotfix:
-  - Fix Requirements.txt
-#### 0.1.0 Release:
-  - Basic Release
-#### 0.0.9 Hotfix:
-  - Fix Updater
-#### 0.0.8 Update:
-  - Fix Updater
-  - Add Raccoon Vuln Scan
-  - Fix PDFMeta
-  - Update Display
-#### 0.0.7 Hotfix:
-  - Fix some bugs
-#### 0.0.6 Update:
-  - Fix updater script
-  - Remove tcpdump
-  - Add ftpvulnscan and pdfmeta
-  
 # Installation Instructions:
 
-BabySploit is best run out of the home directory so to clone it there run:
-```
-git clone git://github.com/M4cs/BabySploit ~/BabySploit
-```
+## Using Pip
 
-After cloning the installation you must install some pre-requisites. **If you are on Kali you should already have all of these installed but it doesn't hurt to do so anyways just in case**. Do so by running the following:
 ```
-*from within the babysploit directory*
 sudo apt-get update
 sudo apt-get upgrade
-sudo python3 install.sh
+sudo apt-get install exploitdb netcat nmap perl php7.0 
+
+# on macOS
+brew install exploitdb netcat nmap perl
+
+pip3 install babysploit
+babysploit
 ```
 
-After installing these binaries you must install required Python 3 modules. To do so run the following:
+In order to use `search` command you must follow steps [here](https://www.exploit-db.com/searchsploit/#install) to install the searchsploit binary!
+
+## Building From Source
 ```
-*from within the BabySploit Directory*
-pip3 install -r requirements.txt --user
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install exploitdb netcat nmap perl php7.0
+
+# on macOS
+brew install exploitdb netcat nmap perl
+
+git clone https://github.com/M4cs/BabySploit.git
+cd BabySploit/
+python3 setup.py install
+babysploit
+```
+
+## Docker Run Command
+
+```
+docker run --rm -idt --name babysploit xshuden/babysploit    # container is deleted when you're done
+OR
+docker run -idt --name babysploit xshuden/babysploit
 ```
 
 # Getting Started:
@@ -117,7 +97,7 @@ until you use the `reset` command which resets the saved configuration.
 #### Running A Tool
 
 In order to run a tool all you have to do is enter the name of the tool into BabySploit. You can use the `tools` command
-to display a menu with all the currently availble tools. If we run tools we get the depiction:
+to display a menu with all the currently available tools. If we run tools we get the depiction:
 <p align="center">
   <img src="https://image.prntscr.com/image/dMlUOjFnQk_KSyru1gTQ2A.png" alt="Tools"/>
 </p>
@@ -180,3 +160,11 @@ Feel free to contribute by making plugins or fixing bugs with a Pull Request. Al
 Licensed Under [MIT](https://github.com/M4cs/BabySploit/blob/master/LICENSE.md).
 
 Copyright (c) 2018 Syndicated Intelligence
+
+# Credits
+
+[@linux_choice](https://github.com/thelinuxchoice) for BlackEye sites and base.
+
+[@M4ll0k](https://github.com/m4ll0k) for WPSeku.
+
+[@exploitdb](https://github.com/exploitdb) for Searchsploit.
